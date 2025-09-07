@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Aurix Club</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/clublogo.jpeg" type="image/x-icon">
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: transparent;
+     padding: 15px 40px;
+     z-index: 1000;
+   }
+   .navbar ul {
+     display: flex;
+     list-style: none;
+     gap: 25px;
+   }
+   .navbar ul li a {
+     font-family: 'Orbitron', sans-serif;
+     color: #fff;
+     text-decoration: none;
+     font-weight: 600;
+     transition: 0.3s;
+   }
+   .navbar ul li a:hover {
+  color: #ffffff; 
+  text-shadow: 0 0 8px #00aaff, 0 0 12px #00ccff; 
+}
+
+   /* Hamburger */
+   .hamburger {
+     display: none;
+     flex-direction: column;
+     cursor: pointer;
+     gap: 6px;
+   }
+   .hamburger span {
+     width: 28px;
+     height: 3px;
+     background: #fff;
+     transition: 0.4s;
+   }
+   @media(max-width: 768px) {
+     .navbar ul {
+       display: none;
+       flex-direction: column;
+       background: rgba(0,0,0,0.95);
+       position: absolute;
+       top: 70px;
+       right: 20px;
+       padding: 20px;
+       border-radius: 10px;
+     }
+     .navbar ul.active {
+       display: flex;
+     }
+     .hamburger {
+       display: flex;
+     }
+   }
+ </style>
+</head>
+<body>
+    <!-- Network and smoke Background Effect -->
+<canvas id="network-bg"></canvas>
+<canvas id="smoke-bg"></canvas>
+<div class="stars"></div> <!-- keep your stars here too -->
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  
+
+  <!-- Contact Section -->
+  <section class="contact-section"> 
+    <h1 class="stylish-heading">Contact Us</h1>
+    <p>If you have questions, or need more information about our events, feel free to reach out to us.</p>
+
+    <div class="contact-container">
+      <!-- Address -->
+      <div class="contact-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>St. Martin's Engineering College<br>Dhulapally, 500100</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact-box">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+91 81259 45610 <br><small>(Chikkonda Ganesh - Chief)</small></p>
+        <p>+91 93989 07977 <br><small>(Charan Ram - Vice Chief)</small></p>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-box">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>aurixclub@gmail.com</p>
+      </div>
+
+      <!-- Timings -->
+      <div class="contact-box">
+        <i class="fas fa-clock"></i>
+        <h3>Timings</h3>
+        <p>10:00 AM – 4:00 PM</p>
+      </div>
+    </div>
+  </section>
+     <!-- Social Media -->
+ <div class="social-icons">
+    <a href="https://www.instagram.com/your_club_username" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:aurixclub@gmail.com" target="_blank" aria-label="Gmail">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/your_club_linkedin" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="policies">
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <canvas id="smoke-bg"></canvas>
+<script src="smoke.js"></script>
+</body>
+</html>

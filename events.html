@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurix Club | Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/clublogo.jpeg" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: transparent;
+     padding: 15px 40px;
+     z-index: 1000;
+   }
+   .navbar ul {
+     display: flex;
+     list-style: none;
+     gap: 25px;
+   }
+   .navbar ul li a {
+     font-family: 'Orbitron', sans-serif;
+     color: #fff;
+     text-decoration: none;
+     font-weight: 600;
+     transition: 0.3s;
+   }
+   .navbar ul li a:hover {
+      color: #ffffff; 
+      text-shadow: 0 0 8px #00aaff, 0 0 12px #00ccff; 
+   }
+
+   /* Hamburger */
+   .hamburger {
+     display: none;
+     flex-direction: column;
+     cursor: pointer;
+     gap: 6px;
+   }
+   .hamburger span {
+     width: 28px;
+     height: 3px;
+     background: #fff;
+     transition: 0.4s;
+   }
+   @media(max-width: 768px) {
+     .navbar ul {
+       display: none;
+       flex-direction: column;
+       background: rgba(0,0,0,0.95);
+       position: absolute;
+       top: 70px;
+       right: 20px;
+       padding: 20px;
+       border-radius: 10px;
+     }
+     .navbar ul.active {
+       display: flex;
+     }
+     .hamburger {
+       display: flex;
+     }
+   }
+
+   /* Event Titles (same as gallery event-label hover) */
+   .event-card h2 {
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+    }
+
+    .event-card h2:hover {
+      background: linear-gradient(90deg, #0ff, #00f, #f0f, #0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neonGlow 1.5s infinite alternate;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    @keyframes neonGlow {
+      0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff; }
+      50% { text-shadow: 0 0 10px #f0f, 0 0 20px #0ff, 0 0 30px #00f; }
+      100% { text-shadow: 0 0 15px #0ff, 0 0 25px #f0f, 0 0 40px #00f; }
+    }
+ </style>
+</head>
+<body>
+  <!-- Background Effects -->
+  <canvas id="network-bg"></canvas>
+  <canvas id="smoke-bg"></canvas>
+  <div class="stars"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1 class="stylish-heading">Our Events</h1>
+    <p>Discover the exciting workshops, hackathons, and activities organized by Aurix Club</p>
+  </header>
+
+  <!-- Events Section -->
+  <section class="events-container slide-in">
+    <div class="event-card">
+        <h2>🎤 Influencer Interaction</h2>
+        <p>This idea focuses on bringing students face-to-face with well-known influencers from various domains. These sessions inspire students, introduce them to industry trends, and expand their professional network.</p>
+        <p><strong>Date:</strong> TBA</p>
+        <a href="https://docs.google.com/forms/d/1MT6QfNe4rAUpjQ9Uz5dvb062f15QFL9D9e-yM5X877k/edit" target="_blank" class="register-btn">Register</a>
+      </div>
+
+    <div class="event-card">
+      <h2>📸 Gamified Project Based Learning Bootcamp</h2>
+      <p>An intensive gamified learning session where students gain hands-on knowledge in a particular domain through project building. Mentors guide students through practical exercises and industry-relevant real world projects.</p>
+      <p><strong>Date:</strong> TBA</p>
+      <a href="https://docs.google.com/forms/d/1MT6QfNe4rAUpjQ9Uz5dvb062f15QFL9D9e-yM5X877k/edit" target="_blank" class="register-btn">Register</a>
+    </div>
+
+    <div class="event-card">
+      <h2>☣︎ Unanimous Event</h2>
+      <p>Get ready to experience the thrill, a surprise awaits...</p>
+      <p><strong>Date:</strong> TBA</p>
+      <a href="https://docs.google.com/forms/d/1MT6QfNe4rAUpjQ9Uz5dvb062f15QFL9D9e-yM5X877k/edit" target="_blank" class="register-btn">Register</a>
+    </div>
+  </section>
+
+  <!-- Social Media -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_club_username" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:aurixclub@gmail.com" target="_blank" aria-label="Gmail">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/your_club_linkedin" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="policies">
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </div>      
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <script src="smoke.js"></script>
+</body>
+</html>

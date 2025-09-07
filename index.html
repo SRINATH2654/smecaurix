@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurix Club</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/clublogo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent; /* transparent navbar */
+      padding: 20px 40px;
+      z-index: 1000;
+      transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+    .navbar.scrolled {
+      background: transparent; /* slightly dark when scrolling */
+      padding: 15px 40px;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .navbar ul li a {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .navbar a:hover { 
+      color: #ffffff; 
+      text-shadow: 0 0 8px #00eaff, 0 0 14px #00ffc6; 
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      transition: 0.4s;
+    }
+    @media(max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 160px 20px 30px; /* more space at top, less at bottom */
+      color: white;
+    }
+    .hero h1 {
+      margin-bottom: 10px; /* reduced gap */
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Vision Section */
+    .vision-section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 2rem;
+      color: #fff;
+      text-align: center;
+    }
+    .vision-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .vision-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .vision-section li {
+      margin: 0.8rem 0;
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .vision-section li:hover {
+      background: rgba(0, 255, 180, 0.2);
+      text-shadow: 0 0 8px #00ffc6, 0 0 12px #00ffc6;
+    }
+
+    /* Director / HOD / Advisor */
+    .profile-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 3rem auto;
+      gap: 2rem;
+      flex-wrap: wrap;
+      color: #fff;
+    }
+    .profile-section img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0,255,200,0.5);
+    }
+    .profile-text {
+      flex: 1;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .profile-text h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #9ad9ff;
+    }
+    .left-img { flex-direction: row; }
+    .right-img { flex-direction: row-reverse; }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 50px;
+    }
+    .site-footer a {
+      color: #9ad9ff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .site-footer a:hover {
+      text-shadow: 0 0 6px #00ffc6;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="network-bg"></canvas>
+  <canvas id="smoke-bg"></canvas>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h2 class="stylish-heading">Aurix</h2>
+    <p>Inspire. Build. Grow.</p>
+  </header>
+
+  <!-- Vision Section -->
+  <section class="vision-section">
+    <h2>Our Vision</h2>
+    <ul>
+      <li>To empower students through project-based learning and innovation.</li>
+      <li>To create a collaborative ecosystem where creativity meets technology.</li>
+      <li>To inspire leadership, problem-solving, and futuristic thinking.</li>
+      <li>To bridge the gap between academics and industry with real-world exposure.</li>
+      <li>To build a vibrant community that learns, grows, and thrives together.</li>
+    </ul>
+  </section>
+
+  <!-- Director -->
+  <section class="profile-section left-img">
+    <img src="images/director.jpeg" alt="Director">
+    <div class="profile-text">
+      <h2>Group Director</h2>
+      <p><strong>Dr. KASA RAVINDRA</strong><br>Group Director</p>
+    </div>
+  </section>
+
+  <!-- HOD -->
+  <section class="profile-section right-img">
+    <img src="images/Drksuresh.jpeg" alt="HOD">
+    <div class="profile-text">
+      <h2>Head of Department</h2>
+      <p><strong>Dr. K. SURESH</strong><br>Head of Department, CSE</p>
+    </div>
+  </section>
+
+  <!-- Advisor -->
+  <section class="profile-section left-img">
+    <img src="images/advisor.jpeg" alt="Advisor">
+    <div class="profile-text">
+      <h2>Faculty Advisor</h2>
+      <p><strong>Mr. KISHOR GOLLA</strong><br>Assistant Professor, CSE</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="policies">
+      <a href="terms.html">Terms & Conditions</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <script src="smoke.js"></script>
+
+  <script>
+    // Add scroll effect for navbar
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms & Conditions | Aurix Club</title>
+
+  <!-- Same fonts and CSS as other pages -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/clublogo.jpeg" type="image/x-icon" />
+  <link rel="icon" href="images/clublogo.jpeg" type="image/x-icon" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Navbar */
+    .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: transparent;
+     padding: 15px 40px;
+     z-index: 1000;
+   }
+   .navbar ul {
+     display: flex;
+     list-style: none;
+     gap: 25px;
+   }
+   .navbar ul li a {
+     font-family: 'Orbitron', sans-serif;
+     color: #fff;
+     text-decoration: none;
+     font-weight: 600;
+     transition: 0.3s;
+   }
+   .navbar ul li a:hover {
+  color: #ffffff; 
+  text-shadow: 0 0 8px #00aaff, 0 0 12px #00ccff; 
+}
+
+
+   /* Hamburger */
+   .hamburger {
+     display: none;
+     flex-direction: column;
+     cursor: pointer;
+     gap: 6px;
+   }
+   .hamburger span {
+     width: 28px;
+     height: 3px;
+     background: #fff;
+     transition: 0.4s;
+   }
+   @media(max-width: 768px) {
+     .navbar ul {
+       display: none;
+       flex-direction: column;
+       background: rgba(0,0,0,0.95);
+       position: absolute;
+       top: 70px;
+       right: 20px;
+       padding: 20px;
+       border-radius: 10px;
+     }
+     .navbar ul.active {
+       display: flex;
+     }
+     .hamburger {
+       display: flex;
+     }
+   }
+ </style>
+</head>
+<body>
+  <!-- Background layers (same as other pages) -->
+  <canvas id="network-bg"></canvas>
+  <canvas id="smoke-bg"></canvas>
+  <div class="stars"></div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="stylish-heading">Terms & Conditions</h1>
+    <p>Understand the rules and policies that guide Aurix Club</p>
+  </header>
+
+  <!-- Terms Content -->
+  <section class="slide-in" style="background: rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; max-width: 1100px; margin: 2rem auto;">
+    <p style="color:#e0e0e0; margin-bottom:1.5rem;">
+      For the purpose of these Terms and Conditions, the term <strong>‘we’, ‘us’, or ‘our’</strong> refers to Aurix Club, operating from St. Martin’s Engineering College.
+      The terms <strong>“you”, “your”, “user”, or “visitor”</strong> refer to any individual or organization accessing our website and/or participating in our events, workshops, or programs.
+    </p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">1. Changes to Content</h2>
+    <p style="color:#e0e0e0;">We reserve the right to add, modify, or remove content on this website without prior notice.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">2. Accuracy & Reliability</h2>
+    <p style="color:#e0e0e0;">While we strive to provide accurate and up-to-date information, neither we nor any third parties make any warranty or representation regarding accuracy, timeliness, completeness, or suitability. You acknowledge that content may contain minor errors, and we disclaim liability for such issues.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">3. User Responsibility</h2>
+    <p style="color:#e0e0e0;">Any action you take based on information provided is entirely at your own risk. It is your responsibility to verify that programs, events, or services meet your requirements.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">4. Intellectual Property</h2>
+    <p style="color:#e0e0e0;">All design, text, images, and content are owned or licensed by Aurix Club. Unauthorized copying, reproduction, or redistribution is prohibited.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">5. Use of Trademarks</h2>
+    <p style="color:#e0e0e0;">All trademarks displayed that are not owned by Aurix Club are acknowledged. Unauthorized use of these may result in legal action.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">6. Prohibited Use</h2>
+    <p style="color:#e0e0e0;">Misuse of our website, including hacking, scraping, or unauthorized access, is strictly prohibited and may result in suspension, legal claims, or criminal proceedings.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">7. Third-Party Links</h2>
+    <p style="color:#e0e0e0;">Links to external websites are provided for convenience. We do not endorse or take responsibility for their content or practices.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">8. Linking to Our Website</h2>
+    <p style="color:#e0e0e0;">You may not create links to our site or content without written consent from Aurix Club.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">9. Event Participation</h2>
+    <p style="color:#e0e0e0;">By registering for or participating in any Aurix Club event, you agree to comply with all club policies. We are not responsible for personal injury, property loss, or damages during events.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">10. Governing Law</h2>
+    <p style="color:#e0e0e0;">These terms shall be governed by the laws of India. Courts in Hyderabad, Telangana shall have exclusive jurisdiction.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">11. Transaction Policies</h2>
+    <p style="color:#e0e0e0;">For any paid events, payments must be processed through secure authorized methods. We are not liable for failures due to third-party providers.</p>
+
+    <h2 style="color:#fff; font-family:'Orbitron',sans-serif; margin:1.5rem 0 0.8rem;">12. Updates to Terms</h2>
+    <p style="color:#e0e0e0;">Aurix Club reserves the right to review and update these Terms and Conditions periodically. Users are encouraged to check regularly for changes.</p>
+
+    <p style="color:#9ad9ff; margin-top:1.5rem;">Last updated: 07 Sep 2025</p>
+  </section>
+
+  <!-- Social icons -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_club_username" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:aurixclub@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/your_club_linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="policies">
+      <a href="terms.html">Terms & Conditions</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts (same as other pages) -->
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <script src="smoke.js"></script>
+</body>
+</html>

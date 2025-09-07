@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurix Club | Team</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="images/clublogo.jpeg" type="image/x-icon">
+  <style>
+     /* Navbar */
+     .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background:transparent;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .navbar ul li a {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover {
+  color: #ffffff; 
+  text-shadow: 0 0 8px #00aaff, 0 0 12px #00ccff; 
+}
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      transition: 0.4s;
+    }
+    @media(max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+    /* Small extra styles for the carousel buttons (keeps everything inside one file) */
+    .committee { margin: 60px auto; text-align: center; width: 92%; max-width: 1100px; }
+    .committee-heading { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: white; margin-bottom: 20px; transition: all 0.3s; }
+    .committee-heading:hover { color: #00d4ff; text-shadow: 0 0 15px #00d4ff; }
+
+    .carousel { position: relative; overflow: hidden; margin: auto; max-width: 820px; }
+    .carousel-track { display:flex; transition: transform 0.45s cubic-bezier(.2,.9,.3,1); will-change: transform; }
+    .member-card { min-width: 100%; box-sizing: border-box; padding: 28px; background: rgba(0,0,0,0.55); border-radius: 14px; color: #fff; text-align: center; box-shadow: 0 6px 22px rgba(0,0,0,0.6); }
+    .member-card img { width:160px; height:160px; object-fit:cover; border-radius:50%; border: 3px solid rgba(0, 212,255,0.85); margin-bottom:12px; transition: transform .3s ease; }
+    .member-card img:hover { transform: scale(1.06); }
+
+    .carousel-btn { position:absolute; top:50%; transform: translateY(-50%); background: rgba(0,0,0,0.35); border:1px solid rgba(0,212,255,0.18); color:#00d4ff; font-size:1.3rem; cursor:pointer; padding:10px 12px; border-radius:50%; z-index: 5; transition: transform .18s ease, background .18s ease; }
+    .carousel-btn:hover { transform: scale(1.08); background: rgba(0,212,255,0.12); }
+    .carousel-btn.left { left: 8px; }
+    .carousel-btn.right { right: 8px; }
+    .carousel-btn:disabled { opacity: 0.35; cursor: default; transform: none; }
+
+    /* responsive tweaks */
+    @media (max-width: 720px) {
+      .member-card img { width:140px; height:140px; }
+      .committee-heading { font-size: 1.5rem; }
+      .carousel { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- background layers (network, smoke, stars) -->
+  <canvas id="network-bg"></canvas>
+  <canvas id="smoke-bg"></canvas>
+  <div class="stars"></div>
+
+  <!-- navbar -->
+  <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  
+
+  <!-- hero -->
+  <header class="hero">
+    <h1 class="stylish-heading">Meet the Aurix Crew</h1>
+    <p>The passionate committees that power Aurix Club</p>
+  </header>
+
+  <!-- TEAM: stacked committees each with a slider -->
+  <section class="team-section">
+
+    <!-- SAMPLE: Technical Committee -->
+    <div class="committee" data-committee="technical">
+      <h2 class="committee-heading">💻 Technical Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/ganesh.jpeg" alt="Chikkonda Ganesh">
+            <h3>Chikkonda Ganesh</h3>
+            <p><strong>Technical Head(Chief)</strong></p>
+            <p>Organizes coding competitions, conducts Bootcamps and mentors project teams with motivation.</p>
+          </div>
+
+          <div class="member-card">
+            <img src="images/tech-member1.jpg" alt="Alice Johnson">
+            <h3>Alice Johnson</h3>
+            <p><strong>Coding Mentor</strong></p>
+            <p>Specialist in algorithms and competitive programming guidance.</p>
+          </div>
+
+          <div class="member-card">
+            <img src="images/tech-member2.jpg" alt="Rahul Mehta">
+            <h3>Rahul Mehta</h3>
+            <p><strong>AI/ML Guide</strong></p>
+            <p>Leads AI/ML workshops and student research projects.</p>
+          </div>
+        </div>
+
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Creative Committee -->
+    <div class="committee" data-committee="creative">
+      <h2 class="committee-heading">🎨 Creative Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/srinath.jpeg" alt="Banda Srinath">
+            <h3>Banda Srinath</h3>
+            <p><strong>Creative Head</strong></p>
+            <p>Leads design & branding, creates posters and visual campaigns.</p>
+          </div>
+
+          <div class="member-card">
+            <img src="images/creative-member1.jpg" alt="David Lee">
+            <h3>David Lee</h3>
+            <p><strong>Visual Designer</strong></p>
+            <p>Photography, motion graphics and digital content creation.</p>
+          </div>
+        </div>
+
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Management Committee -->
+    <div class="committee" data-committee="management">
+      <h2 class="committee-heading">📋 Management Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/rakesh.jpeg" alt="Rakesh Reddy">
+            <h3>Rakesh Reddy</h3>
+            <p><strong>Management Head</strong></p>
+            <p>Plans events, coordinates logistics and ensures smooth execution.</p>
+          </div>
+          <div class="member-card">
+            <img src="images/management-member1.jpg" alt="Member">
+            <h3>Vikram</h3>
+            <p><strong>Coordinator</strong></p>
+            <p>Handles venue coordination and volunteer teams.</p>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Media Committee -->
+    <div class="committee" data-committee="media">
+      <h2 class="committee-heading">📸 Media Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/akshath.jpeg" alt="Akhath">
+            <h3>Akshath</h3>
+            <p><strong>Media Head</strong></p>
+            <p>Photography, videography and event coverage lead.</p>
+          </div>
+          <div class="member-card">
+            <img src="images/media-member1.jpg" alt="Member">
+            <h3>Karan</h3>
+            <p><strong>Videographer</strong></p>
+            <p>Produces highlight reels and promotional videos.</p>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Research Committee -->
+    <div class="committee" data-committee="research">
+      <h2 class="committee-heading">📖 Research Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/charan.jpeg" alt="Charan Ram">
+            <h3>Charan Ram</h3>
+            <p><strong>Research Head</strong></p>
+            <p>Guides members on research projects and publications.</p>
+          </div>
+          <div class="member-card">
+            <img src="images/research-member1.jpg" alt="Member">
+            <h3>Neha</h3>
+            <p><strong>Researcher</strong></p>
+            <p>Supports literature review and experiments.</p>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- PR Committee -->
+    <div class="committee" data-committee="pr">
+      <h2 class="committee-heading">📢 PR Committee</h2>
+
+      <div class="carousel">
+        <button type="button" class="carousel-btn left" aria-label="Previous member"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <div class="member-card">
+            <img src="images/vaishu.jpeg" alt="Gattu Vaishnavi">
+            <h3>Gattu Vaishnavi</h3>
+            <p><strong>PR Head</strong></p>
+            <p>Manages partnerships, influencer outreach and communication.</p>
+          </div>
+          <div class="member-card">
+            <img src="images/pr-member1.jpg" alt="Member">
+            <h3>Rahul</h3>
+            <p><strong>Outreach</strong></p>
+            <p>Coordinates with collaborators and handles promotions.</p>
+          </div>
+        </div>
+        <button type="button" class="carousel-btn right" aria-label="Next member"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- social icons + footer (same as site) -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_club_username" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:aurixclub@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/your_club_linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="policies">
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </div>      
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <!-- scripts (network.js, smoke.js remain unchanged) -->
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <script src="smoke.js"></script>
+
+  <!-- fixed carousel JS: uses pixel-based translation, handles resize and touch -->
+  <script>
+  (function () {
+    document.querySelectorAll('.committee').forEach(committee => {
+      const carousel = committee.querySelector('.carousel');
+      const track = committee.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const leftBtn = committee.querySelector('.carousel-btn.left');
+      const rightBtn = committee.querySelector('.carousel-btn.right');
+
+      // ensure buttons exist
+      if (!leftBtn || !rightBtn || slides.length === 0) return;
+
+      // compute slide width (visible area)
+      let slideWidth = carousel.clientWidth;
+      let index = 0;
+
+      // set initial track width (not strictly necessary but helps)
+      function resize() {
+        slideWidth = carousel.clientWidth;
+        // ensure track children occupy full carousel width
+        slides.forEach(slide => {
+          slide.style.minWidth = slideWidth + 'px';
+        });
+        update();
+      }
+
+      function update() {
+        track.style.transform = 'translateX(' + (-index * slideWidth) + 'px)';
+        leftBtn.disabled = index === 0;
+        rightBtn.disabled = index >= slides.length - 1;
+      }
+
+      // navigation handlers
+      rightBtn.addEventListener('click', () => {
+        if (index < slides.length - 1) index++;
+        update();
+      });
+
+      leftBtn.addEventListener('click', () => {
+        if (index > 0) index--;
+        update();
+      });
+
+      // keyboard accessibility (left/right arrows)
+      committee.addEventListener('keydown', (ev) => {
+        if (ev.key === 'ArrowRight') { if (index < slides.length - 1) { index++; update(); } }
+        if (ev.key === 'ArrowLeft')  { if (index > 0) { index--; update(); } }
+      });
+
+      // touch support (swipe)
+      let startX = 0;
+      let isTouching = false;
+
+      carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isTouching = true;
+      }, {passive: true});
+
+      carousel.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        // optional: implement drag-to-follow behavior
+      }, {passive: true});
+
+      carousel.addEventListener('touchend', (e) => {
+        if (!isTouching) return;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        const threshold = Math.max(30, slideWidth * 0.12);
+        if (diff > threshold && index < slides.length - 1) {
+          index++;
+        } else if (diff < -threshold && index > 0) {
+          index--;
+        }
+        update();
+        isTouching = false;
+      });
+
+      // resize observer for responsive
+      window.addEventListener('resize', resize);
+      // initial
+      resize();
+    });
+  })();
+  </script>
+</body>
+</html>

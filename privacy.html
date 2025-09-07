@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Aurix Club</title>
+
+  <!-- Same fonts and CSS as other pages -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/clublogo.jpeg" type="image/x-icon" />
+  <link rel="icon" href="images/clublogo.jpeg" type="image/x-icon" />
+  <!-- Font Awesome for social icons (same as other pages) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+     /* Navbar */
+     .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .navbar ul li a {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover {
+  color: #ffffff; 
+  text-shadow: 0 0 8px #00aaff, 0 0 12px #00ccff; 
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      transition: 0.4s;
+    }
+    @media(max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background layers (exactly like your other pages) -->
+  <canvas id="network-bg"></canvas>
+  <canvas id="smoke-bg"></canvas>
+  <div class="stars"></div>
+
+  <!-- Navbar (same markup & classes) -->
+ <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/clublogo.jpeg" alt="Aurix Club Logo" class="club-logo" style="height:50px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="stylish-heading">Privacy Policy</h1>
+    <p>Your data. Your privacy. Our commitment.</p>
+  </header>
+
+  <!-- Content container styled by your global classes -->
+  <section class="slide-in" style="background: rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; max-width: 1100px; margin: 2rem auto;">
+    <h2 style="margin-bottom:1rem; color:#fff; font-family:'Orbitron',sans-serif; letter-spacing:1px;">Introduction</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      This Privacy Policy explains how Aurix Club (“we”, “us”, “our”) collects, uses, and safeguards information
+      when you visit our website or participate in our events and activities.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Information We Collect</h2>
+    <ul style="list-style:none; padding-left:0; color:#e0e0e0;">
+      <li style="margin:0.5rem 0;"><strong>Voluntary Data:</strong> Details you submit through forms (e.g., name, email, phone) when registering for events.</li>
+      <li style="margin:0.5rem 0;"><strong>Usage Data:</strong> Non-identifying information like pages viewed and device/browser info used to improve our site.</li>
+      <li style="margin:0.5rem 0;"><strong>Media:</strong> Event photos/videos which may incidentally include participants.</li>
+    </ul>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">How We Use Information</h2>
+    <ul style="list-style:none; padding-left:0; color:#e0e0e0;">
+      <li style="margin:0.5rem 0;">To manage registrations, send event updates, and coordinate activities.</li>
+      <li style="margin:0.5rem 0;">To improve website performance, content, and user experience.</li>
+      <li style="margin:0.5rem 0;">To showcase club initiatives (e.g., galleries, recaps) in line with our purpose.</li>
+    </ul>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Sharing & Disclosure</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      We do not sell your data. We may share limited information with trusted service providers solely to operate our
+      site or events, under confidentiality. We may disclose information if required by law.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Data Security</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      We implement reasonable safeguards to protect your data. However, no method of transmission or storage is 100% secure.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Your Choices</h2>
+    <ul style="list-style:none; padding-left:0; color:#e0e0e0;">
+      <li style="margin:0.5rem 0;">You can request access, correction, or deletion of your personal data we hold.</li>
+      <li style="margin:0.5rem 0;">You can opt out of non-essential communications anytime.</li>
+    </ul>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Event Media Notice</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      By attending Aurix events, you acknowledge that photos/videos may be taken for educational or promotional purposes.
+      If you have concerns, contact us and we’ll try to accommodate.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Third-Party Links</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      Our website may link to external sites. We are not responsible for their content or privacy practices.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Updates to This Policy</h2>
+    <p style="color:#e0e0e0; margin-bottom:1rem;">
+      We may update this policy periodically. Changes will be posted on this page with an updated “Last updated” date.
+    </p>
+
+    <h2 style="margin:1.2rem 0 0.6rem; color:#fff; font-family:'Orbitron',sans-serif;">Contact Us</h2>
+    <p style="color:#e0e0e0;">
+      For questions or requests regarding your data, contact: <a href="mailto:aurixclub@gmail.com" style="color:#00eaff; text-decoration:none;">aurixclub@gmail.com</a>
+    </p>
+    <p style="color:#9ad9ff; margin-top:0.8rem;">Last updated: 07 Sep 2025</p>
+  </section>
+
+  <!-- Social icons (same placement as other pages) -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_club_username" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:aurixclub@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/your_club_linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <!-- Footer (same as others) -->
+  <footer class="site-footer">
+    <div class="policies">
+      <a href="terms.html">Terms & Conditions</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Aurix Club. All rights reserved.</p>
+  </footer>
+
+  <!-- Same scripts as other pages (this is what I missed earlier, my bad) -->
+  <script src="main.js"></script>
+  <script src="network.js"></script>
+  <script src="smoke.js"></script>
+</body>
+</html>
